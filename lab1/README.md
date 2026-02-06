@@ -5,15 +5,15 @@ Objective: Learn to use the `transformers` library with encoder-only (BERT) and 
 ## Structure
 - Overview of the library
 - Import and usage of BERT with `cache_dir`, loading and inference parameters
-- Usage of a Llama 1B chat model with special tokens, tokenization, and chat template
+- Usage of a Gemma chat model with special tokens, tokenization, and chat template
 - Exercises:
   1. Generate embeddings for 5 sentences and find the two most similar
-  2. Ask Llama 1B to identify person names in a text using a system prompt: first zero-shot, then three-shot (explain what a "shot" is)
+  2. Ask Gemma to identify person names in a text using a system prompt: first zero-shot, then three-shot (explain what a "shot" is)
 
 ## Repo Layout
 - `lab1/notebooks/lab1_transformers.ipynb` — the notebook
 - `lab1/data/sentences.txt` — five sentences for similarity
-- `lab1/data/ner_text.txt` — text for person extraction
+- `lab1/data/target_text.txt` — text for person extraction
 - `lab1/data/few_shot_examples.json` — three NER examples for few-shot
 - `lab1/models_cache/` — local cache for downloaded models
 
