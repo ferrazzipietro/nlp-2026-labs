@@ -5,7 +5,7 @@ Objective: Build a Retrieval-Augmented Generation (RAG) system using components 
 ## Structure
 - RAG overview and design choices
 - Embedder: BERT (encoder-only) for chunk embeddings
-- Generator: Llama 1B (decoder-only) for answer generation with context
+- Generator: gemma (decoder-only) for answer generation with context
 - Exercises:
   1. Convert documents into a JSON knowledge base (KB) with `text`, `embedding`, and `embedding_dim`
   2. Implement a function to retrieve the top-n most similar chunks for a query
@@ -28,11 +28,10 @@ pip install -r lab2/requirements.txt
 Open the notebook and follow cells in order.
 - Indexing produces `lab2/data/kb_index.json` containing chunk metadata and embeddings.
 - Retrieval returns top-n chunks by cosine similarity.
-- Generation uses Llama with a concise system prompt and the retrieved context. By default, generation is disabled (`RUN_LLAMA=False`). Enable only with sufficient resources (preferably GPU).
+- Generation uses gemma with a concise system prompt and the retrieved context. By default, generation is disabled (`RUN_gemma=False`). Enable only with sufficient resources (preferably GPU).
 
 ## RAG Overview
 A RAG system retrieves relevant knowledge chunks and feeds them into a generator to produce grounded answers. In this lab:
-- Chunking uses token-based splitting with the BERT tokenizer (e.g., 128 tokens per chunk)
 - Embeddings use pooled hidden states from BERT (`last_hidden_state` mean)
 - Retrieval uses cosine similarity
 - Prompting instructs the model to answer concisely and only from provided context
@@ -40,7 +39,7 @@ A RAG system retrieves relevant knowledge chunks and feeds them into a generator
 ## Real-World Implementations and Resources
 - Storage: **pgvector** (Postgres extension), **FAISS**, **Milvus**, **Weaviate**, **Pinecone**
 - Serving: **vLLM** (open source), closed-source serving options
-- Frameworks: **LangGraph**, **LlamaIndex**
+- Frameworks: **LangGraph**, **gemmaIndex**
 
 ## Notes
 - Keep answers short and grounded in KB content.
