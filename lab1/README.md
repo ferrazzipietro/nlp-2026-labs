@@ -27,7 +27,7 @@ pip install -r lab1/requirements.txt
 Optional: configure Hugging Face cache location via `cache_dir` in code or globally via `HF_HOME`.
 
 ## Running
-Open the notebook and follow cells in order. For the Llama section, consider GPU for speed. The notebook defaults to not generating with Llama (`RUN_LLAMA=False`); flip to `True` when ready and resources allow.
+Open the notebook and follow cells in order.
 
 ## Notes
 - Zero-shot: no examples provided, the model relies only on instructions.
